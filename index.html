@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پرونده‌ی آشتی 🐥</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{box-sizing:border-box;font-family:Tahoma,Arial,sans-serif}
+body{margin:0;min-height:100vh;background:linear-gradient(135deg,#fff0f5,#f5efff);display:flex;justify-content:center;align-items:center;padding:18px;color:#302535}
+.card{width:100%;max-width:430px;background:#fff;border-radius:28px;padding:26px 20px;box-shadow:0 15px 45px rgba(80,50,90,.15);text-align:center}
+.chick{font-size:62px}
+h1{margin:5px 0 8px;font-size:25px}
+.sub{color:#777;line-height:1.8;margin-bottom:20px}
+.case{background:#faf7fc;border-radius:20px;padding:18px;text-align:right;line-height:2.1;margin-bottom:16px}
+.case b{color:#974d72}
+.evidence{display:grid;gap:10px;margin:15px 0}
+.item{background:#fff5f8;border:1px solid #f0d8e2;border-radius:15px;padding:12px;text-align:right}
+button{width:100%;border:0;border-radius:16px;padding:15px;margin-top:10px;font-size:16px;cursor:pointer;background:#9a4d72;color:#fff}
+button:active{transform:scale(.98)}
+.secondary{background:#eee7f2;color:#4a3b50}
+#result{display:none;margin-top:18px;background:#fff7cf;border-radius:18px;padding:17px;line-height:2}
+.small{font-size:12px;color:#888;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="chick">🐥</div>
+<h1>پرونده‌ی آشتی</h1>
+<div class="sub">یک پرونده‌ی بسیار جدی درباره‌ی یک خانم لجباز! 😌</div>
+
+<div class="case">
+<div>👤 <b>متهم:</b> خانم لجباز</div>
+<div>⚠️ <b>جرم:</b> صحبت کردن راجب بقیه پسرا</div>
+</div>
+
+<h3>📂 شواهد موجود:</h3>
+<div class="evidence">
+<div class="item">🐥 جیک‌جیک اجباری</div>
+<div class="item">😐 تهدید به زدن</div>
+<div class="item">🥲 قهر کردن و ناراحت شدن</div>
+</div>
+
+<button onclick="showEvidence()">🔎 بررسی پرونده</button>
+<button class="secondary" onclick="reconcile()">🕊️ آشتی کنیم؟</button>
+
+<div id="result"></div>
+<div class="small">این حکم قابل اعتراض نیست. 😌</div>
+</div>
+
+<script>
+const tg=window.Telegram?.WebApp;
+if(tg){tg.ready();tg.expand();}
+function showEvidence(){
+ const r=document.getElementById("result");
+ r.style.display="block";
+ r.innerHTML="📋 <b>نتیجه‌ی بررسی:</b><br><br>مدارک کافی برای اثبات لجبازی موجود است! 🐥<br>متهم همچنان حق دارد از خودش دفاع کند... ولی اول باید آشتی کند. 😭";
+}
+function reconcile(){
+ const r=document.getElementById("result");
+ r.style.display="block";
+ r.innerHTML="🕊️ <b>حکم نهایی:</b><br><br>متهم به دلیل لجبازی و اذیت کردن طرف مقابل، به <b>آشتی فوری</b> محکوم می‌شود. 🤝❤️<br><br>پرونده مختومه است. 🐥";
+ if(tg?.HapticFeedback) tg.HapticFeedback.notificationOccurred("success");
+}
+</script>
+</body>
+</html>
